@@ -8,6 +8,10 @@
 return [
     false, // $matchHost
     [ // $staticRoutes
+        '/api/cpu' => [
+            [['_route' => '_api_/cpu_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Cpus', '_api_operation_name' => '_api_/cpu_get_collection'], null, ['GET' => 0], null, false, false, null],
+            [['_route' => '_api_/cpu_post', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Cpus', '_api_operation_name' => '_api_/cpu_post'], null, ['POST' => 0], null, false, false, null],
+        ],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -22,15 +26,12 @@ return [
                         .'|validation_errors/([^/]++)(?'
                             .'|(*:172)'
                         .')'
-                        .'|cpus(?'
-                            .'|(?:\\.([^/]++))?(*:203)'
-                            .'|/([^/\\.]++)(?:\\.([^/]++))?(*:237)'
-                            .'|(?:\\.([^/]++))?(*:260)'
-                            .'|/([^/\\.]++)(?:\\.([^/]++))?(*:294)'
+                        .'|cpu/([^/]++)(?'
+                            .'|(*:196)'
                         .')'
                     .')'
                 .')'
-                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:333)'
+                .'|/_error/(\\d+)(?:\\.([^/]++))?(*:235)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -47,11 +48,11 @@ return [
             [['_route' => '_api_validation_errors_hydra', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'ApiPlatform\\Symfony\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_hydra'], ['id'], ['GET' => 0], null, false, true, null],
             [['_route' => '_api_validation_errors_jsonapi', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'ApiPlatform\\Symfony\\Validator\\Exception\\ValidationException', '_api_operation_name' => '_api_validation_errors_jsonapi'], ['id'], ['GET' => 0], null, false, true, null],
         ],
-        203 => [[['_route' => '_api_/cpus{._format}_get_collection', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\CPU', '_api_operation_name' => '_api_/cpus{._format}_get_collection'], ['_format'], ['GET' => 0], null, false, true, null]],
-        237 => [[['_route' => '_api_/cpus/{id}{._format}_get', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\CPU', '_api_operation_name' => '_api_/cpus/{id}{._format}_get'], ['id', '_format'], ['GET' => 0], null, false, true, null]],
-        260 => [[['_route' => '_api_/cpus{._format}_post', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\CPU', '_api_operation_name' => '_api_/cpus{._format}_post'], ['_format'], ['POST' => 0], null, false, true, null]],
-        294 => [[['_route' => '_api_/cpus/{id}{._format}_put', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\CPU', '_api_operation_name' => '_api_/cpus/{id}{._format}_put'], ['id', '_format'], ['PUT' => 0], null, false, true, null]],
-        333 => [
+        196 => [
+            [['_route' => '_api_/cpu/{id}_get', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Cpus', '_api_operation_name' => '_api_/cpu/{id}_get'], ['id'], ['GET' => 0], null, false, true, null],
+            [['_route' => '_api_/cpu/{id}_put', '_controller' => 'api_platform.symfony.main_controller', '_format' => null, '_stateless' => true, '_api_resource_class' => 'App\\Entity\\Cpus', '_api_operation_name' => '_api_/cpu/{id}_put'], ['id'], ['PUT' => 0], null, false, true, null],
+        ],
+        235 => [
             [['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

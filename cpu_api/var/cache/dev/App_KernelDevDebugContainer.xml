@@ -381,7 +381,7 @@
     <service id="App\Entity" class="App\Entity" abstract="true">
       <tag name="container.excluded" source="in &quot;config/services.yaml&quot;"/>
     </service>
-    <service id="App\Repository\CPURepository" class="App\Repository\CPURepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\CpusRepository" class="App\Repository\CpusRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -3788,7 +3788,7 @@
     <service id="doctrine.orm.configuration" class="Doctrine\ORM\Configuration" abstract="true"/>
     <service id="doctrine.orm.entity_manager.abstract" class="Doctrine\ORM\EntityManager" lazy="true" abstract="true"/>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.G2.fV.s"/>
+      <argument type="service" id=".service_locator.yQ4rzH_"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5335,8 +5335,8 @@
       <argument type="service" id="maker.security_config_updater"/>
       <argument type="service" id="maker.security_controller_builder"/>
     </service>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CPURepository" class="App\Repository\CPURepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\CPURepository" class="App\Repository\CPURepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CpusRepository" class="App\Repository\CpusRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CpusRepository" class="App\Repository\CpusRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.w7.f4fT" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5871,10 +5871,10 @@
         <argument key="doctrine.orm.listeners.pdo_session_handler_schema_listener" type="service_closure" id="doctrine.orm.listeners.pdo_session_handler_schema_listener"/>
       </argument>
     </service>
-    <service id=".service_locator.G2.fV.s" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yQ4rzH_" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\CPURepository" type="service_closure" id="App\Repository\CPURepository"/>
+        <argument key="App\Repository\CpusRepository" type="service_closure" id="App\Repository\CpusRepository"/>
       </argument>
     </service>
     <service id=".service_locator.KLVvNIq" class="Symfony\Component\DependencyInjection\ServiceLocator">
