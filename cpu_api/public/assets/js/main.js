@@ -5,7 +5,9 @@ const app = {
     data() {
         return {
             listeCpu: [],
-            stockCpu:0
+            stockCpu:0,
+            selected: '',
+            
         }
 
 
@@ -16,6 +18,10 @@ const app = {
                     console.log(this.listeCpu);
     },
     methods: {
+        modifStock(event) {
+            let nbStock = event.target.dataset.modele;
+            console.log(nbStock);
+        }
 }
 
 }
