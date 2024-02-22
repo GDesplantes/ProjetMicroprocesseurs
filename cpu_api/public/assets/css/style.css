@@ -1,0 +1,40 @@
+/* Bleu clair : #0079bc
+Bleu clair transparent : #0079bc55
+Bleu foncé : #00008b
+Rouge : #FF0000 */
+
+body{
+
+background-color:#0079bc55 ;
+}
+p{
+    color:#00008b;
+}
+#listeCpu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+   
+}
+h1 {
+    position: absolute;
+    background-color:#00008b;
+    color: #0079bc;
+}
+h2 {
+    background: #0079bc77;
+    margin: 0%;
+    color:#00008b99 ;
+    padding: 10px;
+}
+
+section{
+
+width: 17%;
+border: solid red 1px; 
+border-radius: 0px 0px 250px 0px;
+margin: 5px;
+    
+}
+
+

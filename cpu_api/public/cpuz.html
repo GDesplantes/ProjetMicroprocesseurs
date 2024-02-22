@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+    <title>Document</title>
+</head>
+<header>
+    <h1>List of the 9CPUs manufactured On Mulhouse</h1>
+    <img id="banniere" src="./assets/img/banner.jpg" alt="bannière de cpu">
+</header>
+
+<body>
+    <main id="app">
+
+        <div id="listeCpu">
+
+
+            <section v-for="cpu of listeCpu">
+                <h2>
+                    <!-- <img id="logoamd" src="./assets/img/amd.svg"> -->
+                    {{cpu.marque}} {{cpu.famille}} {{cpu.modele}}
+                </h2>
+                <p>ID : {{cpu.id}}</p>
+                <p>Frequency : {{cpu.frequence}}</p>
+                <p>Price : {{cpu.prix}} € </p>
+                <p>Stock : 0</p>
+            </section>
+        </div>
+
+        <article>
+            <h2>
+                Inventory management
+            </h2>
+            
+            <ol>
+                <li>Select a CPU</li>
+                <li>Edit the number of units in stock</li>
+            </ol>
+            <select v-for="cpu of listeCpu">Select a CPU
+                <option>Select a CPU</option>
+            </select>
+            <article>
+
+    </main>
+
+</body>
+
+</html>

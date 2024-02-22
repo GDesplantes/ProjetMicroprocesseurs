@@ -9,14 +9,9 @@ if (\class_exists(\ContainerRENrNUz\App_KernelDevDebugContainer::class, false)) 
 
     return;
 }
-
-if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
-    \class_alias(\ContainerRENrNUz\App_KernelDevDebugContainer::class, App_KernelDevDebugContainer::class, false);
-}
-
 return new \ContainerRENrNUz\App_KernelDevDebugContainer([
     'container.build_hash' => 'RENrNUz',
-    'container.build_id' => '8c37733d',
-    'container.build_time' => 1708339456,
+    'container.build_id' => '7d6808b5',
+    'container.build_time' => 1708516376,
     'container.runtime_mode' => \in_array(\PHP_SAPI, ['cli', 'phpdbg', 'embed'], true) ? 'web=0' : 'web=1',
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerRENrNUz');
