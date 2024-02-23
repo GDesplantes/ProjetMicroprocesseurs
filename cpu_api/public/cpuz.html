@@ -28,12 +28,12 @@
                 <p>ID : {{cpu.id}}</p>
                 <p>Frequency : {{cpu.frequence}} Ghz</p>
                 <p>Price : {{cpu.prix}} € </p>
-                <p>Stock : 0</p>
+                <p>Stock : {{cpu.stock}}</p>
             </section>
         </div>
 
         <article>
-            <h2>
+            <h2 class="inventory">
                 Inventory management
             </h2>
 
@@ -44,11 +44,14 @@
             <select v-model="selected">
                 <option disabled value="">Select a CPU</option>
                 <!-- tentavive récupération donnée options -->
-                <option v-for="cpu of listeCpu" :data-value="cpu.modele" @click="modifStock"> 
+                <option v-for="cpu of listeCpu" :value="cpu.id" @click="modifStock"> 
                     {{cpu.marque}} {{cpu.famille}} {{cpu.modele}}
                 </option>
             </select>
-            <input type="number" :value="stockCpu" @click="modifStock"> unit(s) in stock
+            {{selected}}
+
+            <input type="number" :value="stockCpu" @click="modifStock" v-model="stockCpu"> unit(s) in stock
+            
             <article>
 
     </main>
